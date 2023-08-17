@@ -17,7 +17,7 @@ public class RandomNumberVisualization {
             double u1 = random.nextDouble(); // Uniform random value in [0, 1)
             double u2 = random.nextDouble(); // Uniform random value in [0, 1)
             double randStdNormal = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
-            values[i] = Math.max(0,1 + 0.1 * randStdNormal) ; // Adjust mean and standard deviation as needed
+            values[i] = Math.max(0,10 + 2 * randStdNormal) ; // Adjust mean and standard deviation as needed
         }
 
         HistogramDataset dataset = new HistogramDataset();
