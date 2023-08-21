@@ -1,9 +1,9 @@
 public class Company {
-    int stocks = 1000;
-    int currPrice = 1;
+    int stocks;
+    int currPrice;
 
-    public void sell(double price,int amount, Trader trader, Agent seller) {
-
-        trader.addSellingOffer(price, amount, seller);
+    Company(int stocks,int currPrice){
+        this.stocks=stocks;
+        this.currPrice=currPrice;
     }
 }
