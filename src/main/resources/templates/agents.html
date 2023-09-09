@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agent List</title>
+</head>
+<body>
+<h1>Agent List</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <!-- Add more columns as needed -->
+    </tr>
+    <tr th:each="agent : ${agents}">
+        <td th:text="${agent.my_id}"></td>
+        <td th:text="${agent.stocks}"></td>
+        <!-- Add more columns as needed -->
+    </tr>
+</table>
+</body>
+</html>

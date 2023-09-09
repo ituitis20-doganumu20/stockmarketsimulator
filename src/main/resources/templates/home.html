@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Other head content -->
+    <!-- Include jQuery (make sure jQuery is available) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include moment.js for date handling -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <!-- Include Chart.js (version 2.9.4) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <!-- Include your JavaScript code -->
+
+    <script type="text/javascript" th:src="@{/homescript.js}"></script>
+</head>
+<body>
+<!-- Your HTML content -->
+
+<h1><span id="currentPrice" style="display: none">Loading...</span></h1>
+<div id="chartContainer" style="display: none;width: 800px; height: 400px;">
+    <canvas id="stockChart"></canvas>
+</div>
+
+<div id="initializationFormContainer">
+<!-- Form for initializing data -->
+    <form th:action="@{/initializeData}" method="post" id="initializeDataForm">
+        <label for="stocks">Stocks:</label>
+        <input type="number" id="stocks" name="stocks" required>
+
+        <label for="initialPrice">Initial Price:</label>
+        <input type="number" id="initialPrice" name="initialPrice" step="0.01" required>
+
+        <label for="balance">Balance:</label>
+        <input type="number" id="balance" name="balance" required>
+
+        <label for="buyingPriceOffer">Buying Price Offer:</label>
+        <input type="number" id="buyingPriceOffer" name="buyingPriceOffer" step="0.01" required>
+
+        <button type="submit">Initialize Data</button>
+    </form>
+
+</div>
+
+<!-- Form for adding new agents during simulation -->
+<div id="addAgentContainer" style="display: none;">
+    <form id="addAgentForm">
+        <label for="newAgentBalance">New Agent Balance:</label>
+        <input type="number" id="newAgentBalance" name="newAgentBalance" required>
+
+        <label for="newAgentBuyingPriceOffer">New Agent Buying Price Offer:</label>
+        <input type="number" id="newAgentBuyingPriceOffer" name="newAgentBuyingPriceOffer" step="0.01" required>
+
+        <button type="button" id="addAgentButton">Add New Agent</button>
+    </form>
+</div>
+
+</body>
+
+</html>
