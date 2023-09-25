@@ -14,10 +14,53 @@
     <!-- Include your JavaScript code -->
 
     <script type="text/javascript" th:src="@{/homescript.js}"></script>
+
+    <style>
+        .curled-margins {
+    border-radius: 10px;
+    padding: 20px; /* Adjust as needed */
+    margin: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+    /* Center the content on the screen */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Make the body fill the viewport height */
+        margin: 0; /* Remove default body margin */
+        overflow: hidden; /* Hide overflowing animations */
+        background-color: #000; /* Set a fallback background color */
+    }
+
+    /* Create a video background */
+    #video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cover the entire viewport */
+        filter: blur(5px); /* Add a slight blur effect */
+        z-index: -1;
+    }
+
+    /* Style your content as needed */
+    #content-container {
+        text-align: center; /* Center the text inside the container */
+    }
+    </style>
 </head>
 <body>
-<!-- Your HTML content -->
 
+<video id="video-background" autoplay muted loop>
+    <!-- Provide multiple video sources for compatibility -->
+    <source src="your-video.mp4" type="video/mp4">
+
+    <!-- Add more video formats if needed -->
+</video>
+<!-- Your HTML content -->
+<div id="content-container" style="background-color: white;" class="curled-margins">
 <h1><span id="currentPrice" style="display: none">Loading...</span></h1>
 <div id="chartContainer" style="display: none;width: 800px; height: 400px;">
     <canvas id="stockChart"></canvas>
@@ -55,7 +98,7 @@
         <button type="button" id="addAgentButton">Add New Agent</button>
     </form>
 </div>
-
+</div>
 </body>
 
 </html>

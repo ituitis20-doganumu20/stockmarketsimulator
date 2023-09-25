@@ -83,5 +83,6 @@ public class HomeController {
         traderService.addAgent(agent,newAgentBalance,newAgentBuyingPriceOffer,0,0);
         return "redirect:/"; // Redirect to the home page
     }
+
 }
 
