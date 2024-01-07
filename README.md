@@ -1,2 +1,2 @@
 # stockmarketsimulator
- this is my project for my second internship
+ this is my project for my second internship. I created a stock market simulator where the stock price changes randomly and fluctuates around the starting price. Price wont change dramatically unless the user creates a new agent with some initial balance and buying offer. After that, the price changes with respect to the offer. User can add new agents and see the outcome for each action. A report file is added as pdf. 
